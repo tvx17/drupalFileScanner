@@ -1,0 +1,17 @@
+services:
+  drupal_file_scanner.scanner:
+    class: Drupal\drupal_file_scanner\Service\FileScanner
+    arguments:
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@logger.channel.drupal_file_scanner'
+
+  logger.channel.drupal_file_scanner:
+    parent: logger.channel_base
+    arguments: ['drupal_file_scanner']
+
+  drupal_file_scanner.stream_wrapper.scanfiles:
+    class: Drupal\drupal_file_scanner\StreamWrapper\ScanFilesStream
+    arguments: ['@config.factory']
+    tags:
+      - { name: stream_wrapper, scheme: scanfiles }

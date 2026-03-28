@@ -1,0 +1,15 @@
+drupal_file_scanner.scan:
+  path: '/admin/content/drupal-file-scanner'
+  defaults:
+    _form: '\\Drupal\\drupal_file_scanner\\Form\\ScannerForm'
+    _title: 'Drupal File Scanner'
+  requirements:
+    _permission: 'administer drupal file scanner'
+
+drupal_file_scanner.settings:
+  path: '/admin/config/media/drupal-file-scanner'
+  defaults:
+    _form: '\\Drupal\\drupal_file_scanner\\Form\\SettingsForm'
+    _title: 'Drupal File Scanner settings'
+  requirements:
+    _permission: 'administer drupal file scanner'

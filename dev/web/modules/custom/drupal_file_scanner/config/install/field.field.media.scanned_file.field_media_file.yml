@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.scanned_file
+  module:
+    - file
+id: media.scanned_file.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: scanned_file
+label: File
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: 'jpg jpeg doc docx xlsx xls png pdf csv txt'
+  file_directory: ''
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

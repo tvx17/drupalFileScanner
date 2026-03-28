@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_scan_source_path
+    - media.type.scanned_file
+id: media.scanned_file.field_scan_source_path
+field_name: field_scan_source_path
+entity_type: media
+bundle: scanned_file
+label: 'Source path'
+description: 'Absolute source path used to prevent duplicate imports.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

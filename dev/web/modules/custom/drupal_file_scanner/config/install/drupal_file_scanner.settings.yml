@@ -1,0 +1,2 @@
+scan_path: '/var/data/import'
+allowed_extensions: 'jpg jpeg doc docx xlsx xls png pdf csv txt'

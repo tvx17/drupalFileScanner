@@ -1,0 +1,11 @@
+drupal_file_scanner.scan:
+  title: 'Drupal File Scanner'
+  description: 'Scan configured folder and create media items for files.'
+  parent: system.admin_content
+  route_name: drupal_file_scanner.scan
+
+drupal_file_scanner.settings:
+  title: 'Drupal File Scanner settings'
+  description: 'Configure the scanned folder path.'
+  parent: system.admin_config_media
+  route_name: drupal_file_scanner.settings

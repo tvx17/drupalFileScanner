@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - text
+id: media.field_scan_source_path
+field_name: field_scan_source_path
+entity_type: media
+type: string
+settings:
+  max_length: 2048
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

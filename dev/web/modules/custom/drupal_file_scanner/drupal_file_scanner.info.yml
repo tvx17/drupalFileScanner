@@ -1,0 +1,9 @@
+name: 'Drupal File Scanner'
+type: module
+description: 'Scans a configured folder recursively and creates media items for matching files.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:file
+  - drupal:media
+  - drupal:text

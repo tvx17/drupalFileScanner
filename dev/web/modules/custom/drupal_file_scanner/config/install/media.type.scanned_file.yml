@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: scanned_file
+label: 'Scanned file'
+description: 'Media created by Drupal File Scanner.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
