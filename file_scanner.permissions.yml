@@ -1,0 +1,4 @@
+administer file scanner settings:
+  title: 'Administer FileScanner settings'
+  description: 'Configure scan directory, extensions, and run scans.'
+  restrict access: true

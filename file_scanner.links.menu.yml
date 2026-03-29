@@ -1,0 +1,5 @@
+file_scanner.settings:
+  title: 'FileScanner'
+  description: 'Configure and run recursive file scans for media creation.'
+  route_name: file_scanner.settings
+  parent: system.admin_config_media
