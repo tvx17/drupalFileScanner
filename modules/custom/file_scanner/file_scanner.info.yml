@@ -1,0 +1,5 @@
+name: FileScanner
+type: module
+description: 'Grundlegendes Drupal-11-Modulgerüst für FileScanner.'
+package: Custom
+core_version_requirement: '^11'
