@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\file_scanner\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -15,15 +16,17 @@ final class FileScannerSettingsForm extends ConfigFormBase {
 
   public function __construct(
     ConfigFactoryInterface $configFactory,
+    TypedConfigManagerInterface $typedConfigManager,
     private readonly EntityTypeManagerInterface $entityTypeManager,
     private readonly FileScanner $scanner,
   ) {
-    parent::__construct($configFactory);
+    parent::__construct($configFactory, $typedConfigManager);
   }
 
   public static function create(ContainerInterface $container): self {
     return new self(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       $container->get('entity_type.manager'),
       $container->get('file_scanner.scanner'),
     );
@@ -56,8 +59,7 @@ final class FileScannerSettingsForm extends ConfigFormBase {
       '#required' => TRUE,
     ];
 
-    $mediaTypeStorage = $this->entityTypeManager->getStorage('media_type');
-    $mediaTypes = $mediaTypeStorage->loadMultiple();
+    $mediaTypes = $this->entityTypeManager->getStorage('media_type')->loadMultiple();
     $options = [];
     foreach ($mediaTypes as $id => $mediaType) {
       $options[$id] = $mediaType->label();
@@ -84,8 +86,7 @@ final class FileScannerSettingsForm extends ConfigFormBase {
       $form_state->setErrorByName('scan_directory', $this->t('Please provide a stream-wrapper URI like public://folder.'));
     }
 
-    $extensions = $this->parseExtensions((string) $form_state->getValue('extensions'));
-    if ($extensions === []) {
+    if ($this->parseExtensions((string) $form_state->getValue('extensions')) === []) {
       $form_state->setErrorByName('extensions', $this->t('Please define at least one extension.'));
     }
   }
