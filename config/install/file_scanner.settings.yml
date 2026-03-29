@@ -1,0 +1,12 @@
+scan_directory: 'public://'
+extensions:
+  - jpg
+  - jpeg
+  - png
+  - txt
+  - csv
+  - xlsx
+  - xls
+  - docx
+  - doc
+media_bundle: ''

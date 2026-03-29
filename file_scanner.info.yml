@@ -1,5 +1,8 @@
 name: FileScanner
 type: module
-description: 'Grundlegendes Drupal-11-Modulgerüst für FileScanner.'
+description: 'Scans a configured directory recursively and creates media entities for supported files.'
 package: Custom
 core_version_requirement: '^11'
+dependencies:
+  - drupal:file
+  - drupal:media	
