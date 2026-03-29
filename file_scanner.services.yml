@@ -1,0 +1,8 @@
+services:
+  file_scanner.scanner:
+    class: Drupal\file_scanner\Service\FileScanner
+    arguments:
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@file_system'
+      - '@current_user'

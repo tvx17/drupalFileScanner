@@ -1,0 +1,7 @@
+file_scanner.settings:
+  path: '/admin/config/media/file-scanner'
+  defaults:
+    _form: '\Drupal\file_scanner\Form\FileScannerSettingsForm'
+    _title: 'FileScanner'
+  requirements:
+    _permission: 'administer file scanner settings'
